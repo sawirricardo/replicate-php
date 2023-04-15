@@ -14,17 +14,17 @@ class Replicate extends Connector
         $this->withTokenAuth($this->apiKey, 'Token');
     }
 
-    public function prediction()
+    public function predictions()
     {
         return new PredictionResource($this);
     }
 
-    public function model(string $owner, string $name)
+    public function models(string $owner, string $name)
     {
         return new ModelResource($this, $owner, $name);
     }
 
-    public function training()
+    public function trainings()
     {
         return new TrainingResource($this);
     }
