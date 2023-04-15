@@ -25,8 +25,13 @@ composer require sawirricardo/replicate-php
 ## Usage
 
 ```php
-$skeleton = new Sawirricardo\Replicate();
-echo $skeleton->echoPhrase('Hello, Sawirricardo!');
+$token = 'sxsaxada';
+$client = new Sawirricardo\Replicate\Replicate($token);
+$prediction = $client->predictions()->create('sd-v1.4', [
+    'prompt' => 'my exciting project',
+]);
+
+echo $prediction->json('id');
 ```
 
 ## Testing
@@ -49,8 +54,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [sawirricardo](https://github.com/sawirricardo)
-- [All Contributors](../../contributors)
+-   [sawirricardo](https://github.com/sawirricardo)
+-   [All Contributors](../../contributors)
 
 ## License
 
